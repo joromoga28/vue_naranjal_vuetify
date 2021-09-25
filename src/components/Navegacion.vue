@@ -10,6 +10,12 @@
     <v-btn text to="/registrousuarios">
         Registrarse
     </v-btn>
+    <v-btn text to="/dashboard">
+        Dashboard
+    </v-btn>
+     <v-btn text to="/registroproyectos">
+        Registrar Proyecto
+    </v-btn>
   </v-app-bar>
   <v-navigation-drawer
       v-model="drawer"

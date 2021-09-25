@@ -1,7 +1,6 @@
 <template>
   <div class="Home">
     <v-container>
-      
       <v-card elevation="1" class="pa-4">
         <h1 class="ma-3">Listado de proyectos del grado 8°</h1>
         <v-row>
