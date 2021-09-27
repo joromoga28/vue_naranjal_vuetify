@@ -1,7 +1,9 @@
 <template>
   <div class="centrar_vertical mt-4">
     <div class="contenedor">
-      <v-card outlined min-width="900px" max-width="1000px" class="pa-6 mx-auto">
+      <v-card outlined min-width="900px" max-width="1000px" class="pa-6 mx-auto"
+      elevation="20"
+      shaped>
       <h2 class="text-center mb-6">Formulario de registro de proyectos</h2>
       <v-row>
         <v-col cols="3">
