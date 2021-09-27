@@ -30,7 +30,7 @@
         <v-col
         cols="12"
         md="6">
-          <v-btn color="green" block>
+          <v-btn color="green" text to="/registrousuarios" >
             Registrarse
           </v-btn>
         </v-col>
