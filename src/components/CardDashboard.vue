@@ -73,7 +73,7 @@
         <div class="text-center">
       <v-dialog
       v-model="dialog"
-      width="500"
+      width="900"
       >
       <template v-slot:activator="{ on, attrs }">
           <v-btn color="green" block
@@ -90,8 +90,8 @@
         <v-card-text>
           <div class="centrar_vertical mt-4">
     <div class="contenedor">
-      <v-card outlined min-width="300px" max-width="400px" class="pa-1 mx-auto"
-      elevation="20"
+      <v-card outlined min-width="700px" max-width="800px" class="pa-1 mx-auto"
+      elevation="2"
       shaped>
       <h2 class="text-center mb-6">Formulario de registro de proyectos</h2>
       <v-row>

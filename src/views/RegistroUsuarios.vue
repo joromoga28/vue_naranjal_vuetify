@@ -14,7 +14,6 @@
       @blur="$v.PNombre.$touch()"
     ></v-text-field>
     <v-text-field
-    <v-text-field
       v-model="SNombre"
       :error-messages="nameErrors"
       label="Segundo nombre"
@@ -46,6 +45,7 @@
     ></v-text-field>
     <v-text-field
       v-model="identificación"
+      type="number"
       :error-messages="emailErrors"
       label="Identificación"
       required
@@ -82,11 +82,14 @@
 
 <script>
 export default {
-  data:{
-    TUsuario:[
+  data(){
+    return{
+      TUsuario:[
       'Estudiante',
       'Asesor',
     ]
+    }
+    
   }
 
 }
