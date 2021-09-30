@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const database = require('./urlDatabase');
 
-
 class DatabaseConnection {
 
     constructor() {
