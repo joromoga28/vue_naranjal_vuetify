@@ -6,7 +6,7 @@ class DatabaseConnection {
 
     constructor() {
         mongoose.connect(database.db).then(() => {
-            console.log("Conexión exitosa a la BD");
+            console.log("Conexión éxitosa  BD");
         }, error => {
             console.log(error);
         }).catch(error => {
