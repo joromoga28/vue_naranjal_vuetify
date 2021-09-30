@@ -1,7 +1,7 @@
 const express = require("express");
-const ProyectoController = require("./controllers/proyectoController");
 const DatabaseConnection = require("./database/databaseConnection");
-const ProyectoRouters = require("./routers/proyectoRouter");
+const ProyectoRouter = require("./routers/proyectoRouter");
+const UsuarioRouter = require("./routers/usuarioRouter");
 
 class Server {
 
@@ -19,10 +19,14 @@ class Server {
             res.status(200).json({ message: 'All Ok' });
         });
         /********CREAR RUTAS********/
-        const proyectoRouters = new ProyectoRouters();
+        const proyectoRouter = new ProyectoRouter();
+        const usuarioRouter = new UsuarioRouter();
+
         /*******Añadir las rutas a la app express********/
         this.app.use(router);
-        this.app.use(proyectoController.router);
+        this.app.use(proyectoRouter.router);
+        this.app.use(usuarioRouter.router);
+
         this.app.listen(this.app.get('port'), () => {
             console.log("Corriendo puerto =>", this.app.get('port'));
         });
