@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const ProyectoController = require('../controllers/proyectoController');
 
@@ -22,3 +23,5 @@ class ProyectoRouter{
 }
 
 module.exports = ProyectoRouter;
+=======
+>>>>>>> 77214a9c30877a574a7d4987b4a847ce11bbdaff

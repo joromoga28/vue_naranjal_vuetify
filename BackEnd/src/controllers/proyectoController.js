@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const proyecto = require('../models/proyecto');
 
 class ProyectoController{
@@ -61,3 +62,5 @@ class ProyectoController{
 
 
 module.exports = ProyectoController;
+=======
+>>>>>>> 77214a9c30877a574a7d4987b4a847ce11bbdaff
