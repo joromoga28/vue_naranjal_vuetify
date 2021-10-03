@@ -5,12 +5,13 @@
       <h2 class="text-center mb-6">Iniciar Seción</h2>
       <v-row>
         <v-col cols="12">
-          <v-text-field label="Correo" outlined></v-text-field>
+          <v-text-field v-model ="email" label="Correo" type="email" outlined></v-text-field>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12">
           <v-text-field
+            v-model="password"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show1 ? 'text' : 'password'"
             label="Contraseña"
@@ -23,7 +24,7 @@
         <v-col
         cols="12"
         md="6">
-          <v-btn color="orange" block>
+          <v-btn @click="login" color="orange" block>
             Login
           </v-btn>
         </v-col>
@@ -41,12 +42,36 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
+      email:"",
+      password:"",
       show1: false,
     };
   },
+  methods:{
+    async login(){
+      let credenciales={
+        email: this.email,
+        password: this.password
+      }
+      let bademail= "Usuario no registrado"
+      let badpass= "Email/ contraseña incorrectos"
+      axios.post('http://localhost:3000/usuario/login',credenciales).then
+      (res =>{
+        if(res.data.mensaje===bademail){
+          window.alert(bademail)
+        }else if(res.data.mensaje===badpass){
+          window.alert(badpass)
+        }else{
+          console.log(res.data)
+          this.$router.push('/')
+        }
+      }).catch(error=>{console.log(error)})
+    }
+  }
 };
 </script>
 

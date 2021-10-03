@@ -1,10 +1,7 @@
 const proyecto = require('../models/proyecto');
 
 class ProyectoController {
-
-    constructor() {
-
-    }
+    constructor() {}
 
     registrar(req, res) {
         proyecto.create(req.body, (error, data) => {
@@ -25,6 +22,17 @@ class ProyectoController {
                 res.status(200).json(data);
             }
         })
+    }
+
+    getProyecto(req, res) {
+        let { id } = req.body;
+        proyecto.findById(id, (error, data) => {
+            if (error) {
+                res.status(500).json(error);
+            } else {
+                res.status(200).json({ data });
+            }
+        });
     }
 
     setProyecto(req, res) {

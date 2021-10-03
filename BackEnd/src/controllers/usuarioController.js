@@ -64,12 +64,12 @@ class UsuarioController {
             if (error) {
                 res.status(500).json({ mensaje: "Error" });
             } else if (data == null) {
-                res.status(404).json({ mensaje: "Usuario no registrado" });
+                res.status(200).json({ mensaje: "Usuario no registrado" });
             } else {
                 if (contra === data.password) {
                     res.status(200).json({ mensaje: "éxito", data });
                 } else {
-                    res.status(406).json({ mensaje: "Email/ contraseña incorrectos" });
+                    res.status(200).json({ mensaje: "Email/ contraseña incorrectos" });
                 }
             }
         });

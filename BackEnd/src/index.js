@@ -2,7 +2,7 @@ const express = require("express");
 const DatabaseConnection = require("./database/databaseConnection");
 const ProyectoRouter = require('./routers/proyectoRouter');
 const UsuarioRouter = require('./routers/usuarioRouter');
-
+const cors = require('cors');
 class Server {
 
     constructor() {
@@ -14,6 +14,10 @@ class Server {
     config() {
         this.app.set('port', process.env.PORT || 3000);
         this.app.use(express.json());
+        this.app.use(cors({
+            origin: '*',
+            methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+        }));
         let router = express.Router();
         router.get('/', (req, res) => {
             res.status(200).json({ message: 'All Ok' });
