@@ -24,15 +24,15 @@
         <v-col
         cols="12"
         md="6">
-          <v-btn @click="login" color="orange" block>
-            Login
+          <v-btn  color="green" block to="/registrousuarios">
+            Registrarse
           </v-btn>
         </v-col>
         <v-col
         cols="12"
         md="6">
-          <v-btn  color="green" block to="/registrousuarios">
-            Registrarse
+          <v-btn @click="login" color="orange" block>
+            Login
           </v-btn>
         </v-col>
       </v-row>
