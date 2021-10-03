@@ -12,9 +12,11 @@ class UsuarioRouter {
     config() {
         const objUsuarioC = new UsuarioController();
         this.router.post("/usuario", objUsuarioC.registrar);
-        this.router.get("/usuario", objUsuarioC.getUsuario);
-        this.router.put("/usuario", objUsuarioC.setUsuario);
-        this.router.delete("/usuario", objUsuarioC.deleteUsuario);
+        this.router.post("/usuario/login", objUsuarioC.login);
+        this.router.get("/usuario", objUsuarioC.getUsuarios);
+        this.router.get("/usuario/:id", objUsuarioC.getUsuario);
+        this.router.put("/usuario/:id", objUsuarioC.setUsuario);
+        this.router.delete("/usuario/:id", objUsuarioC.deleteUsuario);
 
     }
 
