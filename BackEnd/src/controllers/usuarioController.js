@@ -17,28 +17,34 @@ class UsuarioController {
     }
 
     getUsuario(req, res) {
-            usuario.find((error, data) => {
-                if (error) {
-                    res.status(500).json({ error });
-                } else {
-                    res.status(200).json(data);
-                }
-            });
-        }
-        /*
-            setUsuario(req, res) {
-                let { id, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, identificacion, tipo_usuario } = req.body;
-                let objUsuario = {
-                    primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, identificacion, tipo_usuario
-                };
-                usuario.findByIdAndUpdate(id, { $set: objUsuario}, (error, data) => {
-                    if (error) {
-                        res.status(500).json({ error });
-                    } else {
-                        res.status(200).json(data);
-                    }
-                });
-            }*/
+        usuario.find((error, data) => {
+            if (error) {
+                res.status(500).json({ error });
+            } else {
+                res.status(200).json(data);
+            }
+        });
+    }
+
+    setUsuario(req, res) {
+        let { id, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, email, identificacion, tipo_usuario } = req.body;
+        let objUsuario = {
+            primer_nombre,
+            segundo_nombre,
+            primer_apellido,
+            segundo_apellido,
+            email,
+            identificacion,
+            tipo_usuario
+        };
+        usuario.findByIdAndUpdate(id, { $set: objUsuario }, (error, data) => {
+            if (error) {
+                res.status(500).json({ error });
+            } else {
+                res.status(200).json(data);
+            }
+        });
+    }
 
     deleteUsuario(req, res) {
         let { id } = req.body;
