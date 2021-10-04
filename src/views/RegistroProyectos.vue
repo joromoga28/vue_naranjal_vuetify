@@ -11,6 +11,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="proyecto.titulo_proyecto"
           single-line
           filled
         ></v-text-field>
@@ -23,6 +24,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="proyecto.formulacion_problema"
           filled
           auto-grow
         ></v-textarea>
@@ -35,6 +37,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="proyecto.pregunta_investigacion"
           single-line
           filled
         ></v-text-field>
@@ -47,6 +50,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="proyecto.objetivo_general"
           single-line
           filled
         ></v-text-field>
@@ -59,6 +63,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="proyecto.objetivos_especificos"
           filled
           auto-grow
           row-height="20"
@@ -72,6 +77,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="proyecto.justificacion"
           filled
           auto-grow
         ></v-textarea>
@@ -89,7 +95,7 @@
         <v-col
         cols="12"
         md="8">
-          <v-btn color="green" block>
+          <v-btn @click="Inscribir" color="green" block>
             Finalizar
           </v-btn>
         </v-col>
@@ -101,8 +107,33 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  data(){
+    return{
+    proyecto:{}
+    }
+    
+  },
+  methods:{
+    async Inscribir(){
+      const datos2 = {
+        titulo_proyecto: this.proyecto.titulo_proyecto,
+        formulacion_problema: this.proyecto.formulacion_problema,
+        pregunta_investigacion: this.proyecto.pregunta_investigacion,
+        objetivo_general: this.proyecto.objetivo_general,
+        objetivos_especificos: this.proyecto.objetivos_especificos,
+        justificacion: this.proyecto.justificacion,
+      }
+      axios.post('http://localhost:3000/proyecto', datos2).then(res =>
+      {
+        console.log(res)
+        this.$router.push("/")
+      }).catch(error =>{
+        console.log(error)
+      })
+    }
+  }
 }
 </script>
 
