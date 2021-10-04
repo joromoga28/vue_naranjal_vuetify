@@ -3,13 +3,13 @@
     class="mx-auto"
   >
     <v-card-text>
-      <div>{{Nombre_Estudiante}}</div>
+      <div>{{primer_nombre}}</div>
       <p class="text-h4 text--primary">
-        {{Titulo_Proyecto}}
+        {{titulo_proyecto}}
       </p>
       <p>Formulación del problema</p>
       <div class="text--primary">
-        {{Formulacion_Problema}}
+        {{formulacion_problema}}
       </div>
     </v-card-text>
     <v-card-actions>
@@ -30,9 +30,9 @@
       >
         <v-card-text class="pb-0">
           <p class="text-h4 text--primary">
-            {{Titulo_Proyecto}}
+            {{titulo_proyecto}}
           </p>
-          <p>{{Objetivo_General}}</p>
+          <p>{{objetivo_general}}</p>
         </v-card-text>
         <v-card-actions class="pt-0">
           <v-btn
@@ -51,10 +51,10 @@
 <script>
 export default {
     props:{
-        Nombre_Estudiante:String,
-        Titulo_Proyecto:String,
-        Formulacion_Problema:String,
-        Objetivo_General:String,
+        primer_nombre:String,
+        titulo_proyecto:String,
+        formulacion_problema:String,
+        objetivo_general:String,
     },
     data: () => ({
       reveal: false,

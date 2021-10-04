@@ -7,15 +7,15 @@
     <v-card-text>
       <div>Proyecto</div>
       <p class="text-h4 text--primary">
-        {{Titulo_Proyecto}}
+        {{titulo_proyecto}}
       </p>
       <p>Objetivo General</p>
       <div class="text--primary">
-        {{Objetivo_General}}
+        {{objetivo_general}}
       </div>
       <p>Nombre Estudiante</p>
       <div class="text--primary">
-        {{Nombre_Estudiante}}
+        {{primer_nombre}}
       </div>
     </v-card-text>
     <v-card-actions>
@@ -100,6 +100,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="titulo_proyecto"
           single-line
           filled
         ></v-text-field>
@@ -112,6 +113,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="formulacion_proyecto"
           filled
           auto-grow
         ></v-textarea>
@@ -124,6 +126,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="pregunta_investigacion"
           single-line
           filled
         ></v-text-field>
@@ -136,6 +139,7 @@
       </v-col>
       <v-col cols="9">
         <v-text-field
+          v-model="objetivo_general"
           single-line
           filled
         ></v-text-field>
@@ -148,6 +152,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="objetivos_especificos"
           filled
           auto-grow
           row-height="20"
@@ -161,6 +166,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
+          v-model="justificacion"
           filled
           auto-grow
         ></v-textarea>
