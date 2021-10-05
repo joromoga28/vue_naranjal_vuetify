@@ -118,6 +118,7 @@ export default {
   methods:{
     async Inscribir(){
       const datos2 = {
+        id_estudiante: "6159c25f1007e1419284c348",
         titulo_proyecto: this.proyecto.titulo_proyecto,
         formulacion_problema: this.proyecto.formulacion_problema,
         pregunta_investigacion: this.proyecto.pregunta_investigacion,

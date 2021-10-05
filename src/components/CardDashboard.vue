@@ -208,9 +208,9 @@ export default {
       }
     },
     props:{ 
-        Titulo_Proyecto:String,
-        Objetivo_General:String,
-        Nombre_Estudiante:String,
+        titulo_proyecto:String,
+        objetivo_general:String,
+        primer_nombre:String,
     }
 }
 </script>

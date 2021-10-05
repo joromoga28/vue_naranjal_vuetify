@@ -2,7 +2,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+
 const proyectoSchema = new Schema({
+    id_estudiante: {
+        type: String,
+        require: [true, "El Id del estudiante es obligatorio"]
+    },
     titulo_proyecto: {
         type: String,
         require: [true, "El titulo es obligatorio"]
