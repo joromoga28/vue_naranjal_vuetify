@@ -5,13 +5,18 @@
       <h2 class="text-center mb-6">Iniciar Seción</h2>
       <v-row>
         <v-col cols="12">
-          <v-text-field v-model ="email" label="Correo" type="email" outlined></v-text-field>
+          <v-text-field v-model ="email"
+          :rules="emailRules" 
+          label="Correo" 
+          type="email" 
+          outlined></v-text-field>
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="12">
           <v-text-field
             v-model="password"
+            :rules="Rules"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             :type="show1 ? 'text' : 'password'"
             label="Contraseña"
@@ -49,9 +54,29 @@ export default {
       email:"",
       password:"",
       show1: false,
+
+      valid: true,
+      name:'',
+      Rules:[
+        v => !!v || 'Contraseña requerida',
+        v => (v && v.length <= 20) || 'Contraseña requiere de maximo 10 caracteres',
+      ],
+      email:'',
+      emailRules: [
+        v => !!v || 'E-mail es requerido',
+        v => /.+@.+\..+/.test(v) || 'E-mail no valido',
+      ],
+      select: null,
+      tipo_usuario:[
+      'Estudiante',
+      'Asesor',
+    ],
     };
   },
   methods:{
+    validate(){
+      this.$refs.form.validate();
+    },
     async login(){
       let credenciales={
         email: this.email,

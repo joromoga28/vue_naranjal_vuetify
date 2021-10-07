@@ -46,7 +46,11 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
+    <div>
+    <img src="https://naranjal.edu.co/wp-content/uploads/2020/07/Cabecera-1-1024x150.png" >
+    </div>
 </div>
+
   
 </template>
 
@@ -61,4 +65,5 @@ export default {
 </script>
 
 <style>
+
 </style>

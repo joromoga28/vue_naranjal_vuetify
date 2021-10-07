@@ -7,6 +7,8 @@
     <v-text-field
       v-model="usuario.primer_nombre"
       label="Primer nombre"
+      :counter="10"
+      :rules="Rules"
       required
     ></v-text-field>
     <v-text-field
@@ -15,6 +17,8 @@
     ></v-text-field>
     <v-text-field
       v-model="usuario.primer_apellido"
+      :counter="10"
+      :rules="Rules"
       label="Primer apellido"
       required
 
@@ -25,17 +29,20 @@
     ></v-text-field>
     <v-text-field
       v-model="usuario.email"
+      :rules="emailRules"
       label="Email"
       required
     ></v-text-field>
     <v-text-field
       v-model="usuario.password"
+      :rules="Rules"
       type="password"
       label="Contraseña"
       required
     ></v-text-field>
     <v-text-field
       v-model="usuario.identificacion"
+      :rules="Rules"
       type="number"
       label="Identificación"
       required
@@ -43,12 +50,12 @@
     
     <v-select
       v-model="usuario.tipo_usuario"
+      :rules="[v => !!v || 'Usuario es requerido']"
       :items="tipo_usuario"
       label="Tipo usuario"
       required
-
     ></v-select>
-  
+  <br>
 
     <v-btn
       class="mr-4"
@@ -69,8 +76,20 @@
 <script>
 import axios from 'axios'
 export default {
-  data(){
+  data:() => {
     return{
+      valid: true,
+      name:'',
+      Rules:[
+        v => !!v || 'Información requerida',
+        v => (v && v.length <= 10) || 'Información requiere de maximo 10 caracteres',
+      ],
+      email:'',
+      emailRules: [
+        v => !!v || 'E-mail es requerido',
+        v => /.+@.+\..+/.test(v) || 'E-mail no valido',
+      ],
+      select: null,
       tipo_usuario:[
       'Estudiante',
       'Asesor',
@@ -80,6 +99,9 @@ export default {
     
   },
   methods:{
+    validate(){
+      this.$refs.form.validate();
+    },
     async Crear(){
       const datos = {
         primer_nombre: this.usuario.primer_nombre,

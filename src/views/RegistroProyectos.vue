@@ -12,6 +12,8 @@
       <v-col cols="9">
         <v-text-field
           v-model="proyecto.titulo_proyecto"
+          :counter="200"
+          :rules="Rules"
           single-line
           filled
         ></v-text-field>
@@ -25,6 +27,8 @@
       <v-col cols="9">
         <v-textarea
           v-model="proyecto.formulacion_problema"
+          :counter="500"
+          :rules="Rules"
           filled
           auto-grow
         ></v-textarea>
@@ -38,6 +42,8 @@
       <v-col cols="9">
         <v-text-field
           v-model="proyecto.pregunta_investigacion"
+          :counter="200"
+          :rules="Rules"
           single-line
           filled
         ></v-text-field>
@@ -51,6 +57,8 @@
       <v-col cols="9">
         <v-text-field
           v-model="proyecto.objetivo_general"
+          :counter="200"
+          :rules="Rules"
           single-line
           filled
         ></v-text-field>
@@ -64,6 +72,8 @@
       <v-col cols="9">
         <v-textarea
           v-model="proyecto.objetivos_especificos"
+          :counter="500"
+          :rules="Rules"
           filled
           auto-grow
           row-height="20"
@@ -78,6 +88,8 @@
       <v-col cols="9">
         <v-textarea
           v-model="proyecto.justificacion"
+          :counter="200"
+          :rules="Rules"
           filled
           auto-grow
         ></v-textarea>
@@ -109,8 +121,14 @@
 <script>
 import axios from 'axios'
 export default {
-  data(){
+  data:() =>{
     return{
+      valid: true,
+      name:'',
+      Rules:[
+        v => !!v || 'Información requerida',
+        v => (v && v.length >= 50) || 'La información requiere minimo 50 caracteres ',
+      ],
     proyecto:{}
     }
     
