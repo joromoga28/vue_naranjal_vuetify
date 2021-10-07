@@ -111,7 +111,6 @@
             Finalizar
           </v-btn>
         </v-col>
-        
       </v-row>
     </v-card>
     </div>

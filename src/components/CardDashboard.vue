@@ -6,7 +6,7 @@
   >
     <v-card-text>
       <div>Proyecto</div>
-      <p class="text-h4 text--primary">
+      <p class="text-h6 text--primary">
         {{titulo_proyecto}}
       </p>
       <p>Objetivo General</p>
