@@ -9,9 +9,14 @@
           md="4"
           xs="6" 
           v-for="proyect in proyectos" :key="proyect._id">
-            <CardDashboard :titulo_proyecto="proyect.titulo_proyecto" 
+            <CardDashboard 
+            :titulo_proyecto="proyect.titulo_proyecto" 
+            :formulacion_problema="proyect.formulacion_problema"
+            :pregunta_investigacion="proyect.pregunta_investigacion"
             :objetivo_general="proyect.objetivo_general" 
-            :Nombre_Estudiante="proyect.primer_nombre" ></CardDashboard>
+            :objetivos_especificos="proyect.objetivos_especificos"
+            :justificacion="proyect.justificacion" >
+            </CardDashboard>
           </v-col>
         </v-row>
       </v-card>

@@ -18,7 +18,7 @@
         color="teal accent-4"
         @click="reveal = true"
       >
-        Learn More
+        Conocer mas
       </v-btn>
     </v-card-actions>
 
@@ -43,7 +43,7 @@
             color="teal accent-4"
             @click="reveal = false"
           >
-            Close
+            regresar
           </v-btn>
         </v-card-actions>
       </v-card>

@@ -9,16 +9,26 @@
       <p class="text-h6 text--primary">
         {{titulo_proyecto}}
       </p>
+      <p>Formulación Problema</p>
+      <div class="text--primary">
+        {{formulacion_problema}}
+      </div><br>
+      <p>Pregunta Investigación</p>
+      <div class="text--primary">
+        {{pregunta_investigacion}}
+      </div><br>
       <p>Objetivo General</p>
       <div class="text--primary">
         {{objetivo_general}}
       </div>
-      <p>Nombre Estudiante</p>
-      <div class="text--primary">
-        {{primer_nombre}}
-        {{primer_apellido}}
-      </div>
     </v-card-text>
+    <v-btn
+        text
+        color="teal accent-4"
+        @click="reveal = true"
+      >
+        Conocer mas
+      </v-btn>
     <v-card-actions>
       <v-row>
         <v-col
@@ -114,7 +124,7 @@
       </v-col>
       <v-col cols="9">
         <v-textarea
-          v-model="formulacion_proyecto"
+          v-model="formulacion_problema"
           filled
           auto-grow
         ></v-textarea>
@@ -197,22 +207,55 @@
         </v-col>
       </v-row>
     </v-card-actions>
+    <v-expand-transition>
+      <v-card
+        v-if="reveal"
+        class="transition-fast-in-fast-out v-card--reveal"
+        style="height: 100%;"
+      >
+        <v-card-text class="pb-0">
+          <p class="text-h6 text--primary">
+            {{titulo_proyecto}}
+          </p>
+          
+      <p>Objetivos Especificos</p>
+      <div class="text--primary">
+        {{objetivos_especificos}}
+      </div><br>
+      <p>Justificación</p>
+      <div class="text--primary">
+        {{justificacion}}
+      </div>
+        </v-card-text>
+        <v-card-actions class="pt-0">
+          <v-btn
+            text
+            color="teal accent-4"
+            @click="reveal = false"
+          >
+            regresar
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-expand-transition>
   </v-card>
 </template>
 
 <script>
 export default {
-    data () {
-      return {
-        dialog1: false,
-        dialog: false,
-      }
-    },
+    data: () => ({
+      reveal: false,
+      dialog1: false,
+      dialog: false,
+    }),
+
     props:{ 
         titulo_proyecto:String,
+        formulacion_problema: String,
+        pregunta_investigacion: String,
         objetivo_general:String,
-        primer_nombre:String,
-        primer_apellido: String,
+        objetivos_especificos:String,
+        justificacion: String,
     }
 }
 </script>
