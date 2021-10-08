@@ -4,7 +4,7 @@
   >
     <v-card-text>
       <div>{{primer_nombre}}</div>
-      <p class="text-h4 text--primary">
+      <p class="text-h6 text--primary">
         {{titulo_proyecto}}
       </p>
       <p>Formulación del problema</p>
@@ -29,10 +29,13 @@
         style="height: 100%;"
       >
         <v-card-text class="pb-0">
-          <p class="text-h4 text--primary">
+          <p class="text-h6 text--primary">
             {{titulo_proyecto}}
           </p>
-          <p>{{objetivo_general}}</p>
+          <p>Objetivo General</p>
+      <div class="text--primary">
+        {{objetivo_general}}
+      </div>
         </v-card-text>
         <v-card-actions class="pt-0">
           <v-btn

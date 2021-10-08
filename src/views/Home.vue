@@ -9,9 +9,10 @@
           md="4"
           xs="6" 
           v-for="proyect in proyectos" :key="proyect.id">
-            <CardProyectosHome :primer_nombre="proyect.primer_nombre" :Formulacion_Problema="proyect.formulacion_problema"
-            :Objetivo_General="proyect.objetivo_general"
-            :Titulo_Proyecto="proyect.titulo_proyecto"></CardProyectosHome>
+            <CardProyectosHome :primer_nombre="proyect.primer_nombre" 
+            :formulacion_problema="proyect.formulacion_problema"
+            :objetivo_general="proyect.objetivo_general"
+            :titulo_proyecto="proyect.titulo_proyecto"></CardProyectosHome>
           </v-col>
         </v-row>
       </v-card>
