@@ -3,7 +3,7 @@
     <Navegacion></Navegacion>
     <v-main>
       <router-view/>
-    </v-main>
+    </v-main><br>
     <PageFooter></PageFooter>
   </v-app>
 </template>

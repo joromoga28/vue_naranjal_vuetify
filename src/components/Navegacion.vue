@@ -10,8 +10,8 @@
     <v-btn text to="/registrousuarios">
         Registrarse
     </v-btn>
-    <v-btn text to="/dashboard">
-        Dashboard
+    <v-btn text to="/">
+        Home
     </v-btn>
     <v-btn text to="/registroproyectos">
         Registrar Proyecto

@@ -60,11 +60,10 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="primary"
+            color="error"
             text
-            @click="dialog1 = false"
-          >
-            Aceptar
+            v-on:click="eliminar()">
+            Eliminar
           </v-btn>
           <v-btn
             color="primary"
@@ -256,8 +255,9 @@ export default {
         objetivo_general:String,
         objetivos_especificos:String,
         justificacion: String,
-    }
-}
+    },
+    
+};
 </script>
 
 <style>

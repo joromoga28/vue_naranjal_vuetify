@@ -93,7 +93,7 @@ export default {
         }else{
           console.log(res.data)
           localStorage.usuarioid = res.data.data._id
-          this.$router.push('/')
+          this.$router.push('/dashboard')
         }
       }).catch(error=>{console.log(error)})
     }
