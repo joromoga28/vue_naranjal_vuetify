@@ -22,34 +22,20 @@
 
 <script>
 import CardProyectosHome from '../components/CardProyectosHome.vue'
+import axios from 'axios'
 export default {
   components: { CardProyectosHome },
   data(){
     return{
       proyectos:[
-        {
-          id:1,
-          primer_nombre:"Nombre 1",
-          formulacion_problema:"Formulacion problema 1",
-          objetivo_general:"objetivo general 1",
-          titulo_proyecto:"titulo proyecto 1"
-        },
-        {
-          id:2,
-          primer_nombre:"Nombre 2",
-          formulacion_problema:"Formulacion problema 2",
-          objetivo_general:"objetivo general 2",
-          titulo_proyecto:"titulo proyecto 2"
-        },
-        {
-          id:3,
-          primer_nombre:"Nombre 3",
-          formulacion_problema:"Formulacion problema 3",
-          objetivo_general:"objetivo general 3",
-          titulo_proyecto:"titulo proyecto 3"
-        }
       ]
     }
+  },
+  mounted(){
+    axios.get('http://localhost:3000/proyecto').then(res =>{
+        this.proyectos =res.data;
+        console.log(res.data)
+      })
   }
 
 }

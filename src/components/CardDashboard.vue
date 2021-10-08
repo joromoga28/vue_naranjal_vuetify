@@ -16,6 +16,7 @@
       <p>Nombre Estudiante</p>
       <div class="text--primary">
         {{primer_nombre}}
+        {{primer_apellido}}
       </div>
     </v-card-text>
     <v-card-actions>
@@ -211,6 +212,7 @@ export default {
         titulo_proyecto:String,
         objetivo_general:String,
         primer_nombre:String,
+        primer_apellido: String,
     }
 }
 </script>

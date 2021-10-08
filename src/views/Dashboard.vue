@@ -31,10 +31,15 @@ export default {
       ]
     }
   },
-  mounted(){
-      axios.get('http://localhost:3000/proyecto').then(data =>{
-        this.proyectos =data.data;
-        console.log(data)
+ mounted(){
+    if(!localStorage.usuarioid || localStorage.usuarioid == 'undefined'){
+        window.alert("Debes logearte primero")
+        this.$router.push("/login")
+      }
+      let url = 'http://localhost:3000/proyecto/'+ localStorage.usuarioid
+      axios.get(url).then(res =>{
+        this.proyectos =res.data.data;
+        console.log(res.data.data)
       })
   }
     
