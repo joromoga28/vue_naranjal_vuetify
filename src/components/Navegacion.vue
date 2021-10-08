@@ -13,7 +13,7 @@
     <v-btn text to="/dashboard">
         Dashboard
     </v-btn>
-     <v-btn text to="/registroproyectos">
+    <v-btn text to="/registroproyectos">
         Registrar Proyecto
     </v-btn>
   </v-app-bar>
@@ -34,7 +34,7 @@
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Login</v-list-item-title>
+            <v-list-item-title >Login</v-list-item-title>
           </v-list-item>
 
           <v-list-item>

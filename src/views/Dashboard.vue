@@ -31,7 +31,7 @@ export default {
       ]
     }
   },
- mounted(){
+  mounted(){
     if(!localStorage.usuarioid || localStorage.usuarioid == 'undefined'){
         window.alert("Debes logearte primero")
         this.$router.push("/login")

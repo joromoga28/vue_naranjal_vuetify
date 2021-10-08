@@ -25,8 +25,8 @@ class ProyectoController {
     }
 
     getProyecto(req, res) {
-        let { id } = req.body;
-        proyecto.findById(id, (error, data) => {
+        let { id } = req.params;
+        proyecto.find({ id_estudiante: id }, (error, data) => {
             if (error) {
                 res.status(500).json(error);
             } else {
