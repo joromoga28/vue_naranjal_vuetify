@@ -16,9 +16,6 @@
     <v-btn text to="/registroproyectos">
         Registrar Proyecto
     </v-btn>
-    <v-btn text to="/usuarioslistado">
-        Usuarios
-    </v-btn>
   </v-app-bar>
   <v-navigation-drawer
       v-model="drawer"
