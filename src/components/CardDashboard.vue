@@ -62,7 +62,7 @@
           <v-btn
             color="error"
             text
-            v-on:click="eliminar()">
+            v-on:click="eliminar(id)">
             Eliminar
           </v-btn>
           <v-btn
@@ -256,7 +256,18 @@ export default {
         objetivos_especificos:String,
         justificacion: String,
     },
-    
+    methods:{
+      eliminar(id){
+        let obj = { id};
+        store.dispatch("eliminarProyecto", obj)
+        .then(()=>{
+          store.dispatch('cargarProyectos');
+        })
+        .catch(error=>{
+          console.log(error);
+        });
+      },
+    },
 };
 </script>
 

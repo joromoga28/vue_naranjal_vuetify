@@ -5,11 +5,11 @@ import Dashboard from '../views/Dashboard.vue'
 import Login from '../views/Login.vue'
 import RegistroProyectos from '../views/RegistroProyectos.vue'
 import RegistroUsuarios from '../views/RegistroUsuarios.vue'
+import UsuariosListado from '../views/UsuariosListado.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         name: 'Home',
         component: Home
@@ -33,6 +33,11 @@ const routes = [
         path: '/registrousuarios',
         name: 'RegistroUsuarios',
         component: RegistroUsuarios
+    },
+    {
+        path: '/usuarioslistado',
+        name: 'UsuariosListado',
+        component: UsuariosListado
     },
 ]
 

@@ -16,6 +16,9 @@
     <v-btn text to="/registroproyectos">
         Registrar Proyecto
     </v-btn>
+    <v-btn text to="/usuarioslistado">
+        Usuarios
+    </v-btn>
   </v-app-bar>
   <v-navigation-drawer
       v-model="drawer"
@@ -34,7 +37,7 @@
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title >Login</v-list-item-title>
+            <v-list-item-title>Login</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
