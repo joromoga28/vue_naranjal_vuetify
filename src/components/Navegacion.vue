@@ -16,6 +16,9 @@
     <v-btn text to="/registroproyectos">
         Registrar Proyecto
     </v-btn>
+    <v-btn text @click="cerrar_sesion">
+        Cerrar Sesión
+    </v-btn>
   </v-app-bar>
   <v-navigation-drawer
       v-model="drawer"
@@ -60,6 +63,12 @@ export default {
       drawer: false,
       group: null,
     }),
+
+    methods:{
+      cerrar_sesion(){
+        localStorage.removeItem('usuarioid')
+      }
+    }
 
 };
 </script>

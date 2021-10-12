@@ -268,7 +268,7 @@ export default {
       axios.delete(url).then(res =>{
         console.log(res.data)
         this.dialog1 = false
-        this.$router.push("/dashboard")
+        this.$router.push('/dashboard')
       }).catch(error=> {
         console.log(error)
         })

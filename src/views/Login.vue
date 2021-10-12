@@ -92,7 +92,7 @@ export default {
           window.alert(badpass)
         }else{
           console.log(res.data)
-          localStorage.usuarioid = res.data.data._id
+          localStorage.setItem('usuarioid', res.data.data._id )
           this.$router.push('/dashboard')
         }
       }).catch(error=>{console.log(error)})
