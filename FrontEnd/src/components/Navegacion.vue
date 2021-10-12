@@ -67,6 +67,7 @@ export default {
     methods:{
       cerrar_sesion(){
         localStorage.removeItem('usuarioid')
+        this.$router.push("/login");
       }
     }
 
