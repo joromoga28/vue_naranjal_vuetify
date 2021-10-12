@@ -10,6 +10,7 @@
           xs="6" 
           v-for="proyect in proyectos" :key="proyect._id">
             <CardDashboard 
+            :id="proyect._id"
             :titulo_proyecto="proyect.titulo_proyecto" 
             :formulacion_problema="proyect.formulacion_problema"
             :pregunta_investigacion="proyect.pregunta_investigacion"

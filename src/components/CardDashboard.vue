@@ -62,7 +62,7 @@
           <v-btn
             color="error"
             text
-            v-on:click="eliminar(id)">
+            v-on:click="eliminar">
             Eliminar
           </v-btn>
           <v-btn
@@ -241,6 +241,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data: () => ({
       reveal: false,
@@ -249,6 +250,7 @@ export default {
     }),
 
     props:{ 
+        id:String,
         titulo_proyecto:String,
         formulacion_problema: String,
         pregunta_investigacion: String,
@@ -257,16 +259,20 @@ export default {
         justificacion: String,
     },
     methods:{
-      eliminar(id){
-        let obj = { id};
-        store.dispatch("eliminarProyecto", obj)
-        .then(()=>{
-          store.dispatch('cargarProyectos');
+      async eliminar(){
+        if(!localStorage.usuarioid || localStorage.usuarioid == 'undefined'){
+        window.alert("Debes logearte primero")
+        this.$router.push("/login")
+      }
+      let url = 'http://localhost:3000/proyecto/eliminar/'+ this.id
+      axios.delete(url).then(res =>{
+        console.log(res.data)
+        this.dialog1 = false
+        this.$router.push("/dashboard")
+      }).catch(error=> {
+        console.log(error)
         })
-        .catch(error=>{
-          console.log(error);
-        });
-      },
+      }
     },
 };
 </script>

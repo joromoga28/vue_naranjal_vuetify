@@ -56,7 +56,7 @@ class ProyectoController {
 
     deleteProyecto(req, res) {
         let { id } = req.params;
-        proyecto.findByIdAndRemove({ id_estudiante: id }, (error, data) => {
+        proyecto.findByIdAndRemove(id, (error, data) => {
             if (error) {
                 res.status(500).json({ error });
             } else {

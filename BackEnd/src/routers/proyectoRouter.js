@@ -14,7 +14,7 @@ class ProyectoRouter {
         this.router.get("/proyecto", objProyectoC.getProyectos);
         this.router.get("/proyecto/:id", objProyectoC.getProyecto);
         this.router.put("/proyecto", objProyectoC.setProyecto);
-        this.router.delete("/proyecto/:id", objProyectoC.deleteProyecto);
+        this.router.delete("/proyecto/eliminar/:id", objProyectoC.deleteProyecto);
     }
 }
 
