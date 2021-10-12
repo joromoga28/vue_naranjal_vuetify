@@ -152,7 +152,7 @@ export default {
           justificacion: this.proyecto.justificacion,
         };
         axios
-          .post("http://localhost:3000/proyecto", datos2)
+          .post("https://naranjal-backend.herokuapp.com/proyecto", datos2)
           .then((res) => {
             console.log(res);
             this.$router.push("/dashboard");

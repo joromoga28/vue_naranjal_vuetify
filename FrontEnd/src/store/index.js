@@ -20,21 +20,21 @@ export default new Vuex.Store({
     actions: {
         async cargarUsuarios({ commit }) {
             // Get
-            const peticion = await fetch('http://localhost:3000/usuario');
+            const peticion = await fetch('https://naranjal-backend.herokuapp.com/usuario');
             const data = await peticion.json();
             console.log(data);
             commit('setUsuarios', data);
         },
         async cargarProyectos({ commit }) {
             // Get
-            const peticion = await fetch('http://localhost:3000/proyecto/');
+            const peticion = await fetch('https://naranjal-backend.herokuapp.com/proyecto/');
             const data = await peticion.json();
             console.log(data);
             commit('setProyectos', data);
         },
         async registrarUsuario({ commit }, objUsuario) {
             //POST
-            const peticion = await fetch('http://localhost:3000/usuario', {
+            const peticion = await fetch('https://naranjal-backend.herokuapp.com/usuario', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ export default new Vuex.Store({
             console.log(data);
         },
         async eliminarUsuario({ commit }, obj) {
-            const peticion = await fetch('http://localhost:3000/usuario', {
+            const peticion = await fetch('https://naranjal-backend.herokuapp.com/usuario', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ export default new Vuex.Store({
             });
         },
         async eliminarProyecto({ commit }, obj) {
-            const peticion = await fetch('http://localhost:3000/proyecto/', {
+            const peticion = await fetch('https://naranjal-backend.herokuapp.com/proyecto/', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

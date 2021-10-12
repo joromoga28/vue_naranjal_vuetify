@@ -33,7 +33,7 @@ export default {
     }
   },
   mounted(){
-    axios.get('http://localhost:3000/proyecto').then(res =>{
+    axios.get('https://naranjal-backend.herokuapp.com/proyecto').then(res =>{
         this.proyectos =res.data;
         console.log(res.data)
       })

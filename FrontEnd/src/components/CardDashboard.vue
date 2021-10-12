@@ -264,7 +264,7 @@ export default {
         window.alert("Debes logearte primero")
         this.$router.push("/login")
       }
-      let url = 'http://localhost:3000/proyecto/eliminar/'+ this.id
+      let url = 'https://naranjal-backend.herokuapp.com/proyecto/eliminar/'+ this.id
       axios.delete(url).then(res =>{
         console.log(res.data)
         this.dialog1 = false

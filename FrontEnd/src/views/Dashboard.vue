@@ -43,7 +43,7 @@ export default {
         window.alert("Debes logearte primero")
         this.$router.push("/login")
       }
-      let url = 'http://localhost:3000/proyecto/'+ localStorage.usuarioid
+      let url = 'https://naranjal-backend.herokuapp.com/proyecto/'+ localStorage.usuarioid
       axios.get(url).then(res =>{
         this.proyectos =res.data.data;
         console.log(res.data.data)
